@@ -1,7 +1,7 @@
 import type { AxiosError } from "axios";
 
-import { useUserStore } from "@/stores";
-import { privateAPI } from "../axios";
+import { useUserStore } from "~/stores";
+import { api } from "../axios";
 import { memoizedRefreshToken } from "./refreshToken";
 
 export const errorResponse = async (error: AxiosError) => {
@@ -11,7 +11,7 @@ export const errorResponse = async (error: AxiosError) => {
     const refreshWasSuccessful = await memoizedRefreshToken();
     if (refreshWasSuccessful) {
       const refreshedToken = useUserStore.getState().token;
-      return privateAPI({
+      return api({
         ...config,
         headers: { Authorization: `Bearer ${refreshedToken}` },
       });

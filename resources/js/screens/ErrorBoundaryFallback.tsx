@@ -1,4 +1,4 @@
-import { Logo } from "@/components";
+import { Logo } from "~/icons";
 
 export const ErrorBoundaryFallback = () => {
   return (

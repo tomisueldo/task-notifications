@@ -3,11 +3,11 @@ import { useMutation } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
-import { googleLogin } from "@/api";
-import { Logo } from "@/components";
-import { ROUTES } from "@/router";
-import { useUserStore } from "@/stores";
-import { errorToast, useToastStore } from "@/ui";
+import { googleLogin } from "~/api";
+import { Logo } from "~/icons";
+import { ROUTES } from "~/router";
+import { useUserStore } from "~/stores";
+import { errorToast, useToastStore } from "~/ui";
 
 export const Login = () => {
   const { pushToast } = useToastStore();
@@ -20,7 +20,7 @@ export const Login = () => {
     onSuccess: (data) => {
       void pushToast({ type: "success", title: "Welcome back!" });
       setToken(data.data.accessToken);
-      navigate(ROUTES.base);
+      navigate(ROUTES.home);
     },
     onError: (e) => {
       errorToast(e);
@@ -29,7 +29,7 @@ export const Login = () => {
       // because we KNOW the login will fail
       void pushToast({ type: "success", title: "Welcome back!" });
       setToken("some token");
-      navigate(ROUTES.base);
+      navigate(ROUTES.home);
     },
   });
 

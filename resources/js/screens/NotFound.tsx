@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { ROUTES } from "@/router";
+import { ROUTES } from "~/router";
 
 export const NotFound = () => {
   return (
@@ -23,7 +23,7 @@ export const NotFound = () => {
 
         <div className="mt-10 flex justify-center">
           <Link
-            to={ROUTES.base}
+            to={ROUTES.home}
             className="text-sm font-semibold leading-7 text-white"
           >
             <span aria-hidden="true">&larr;</span> Back to home

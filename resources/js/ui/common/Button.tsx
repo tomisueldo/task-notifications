@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ForwardedRef } from "react";
 
-import { forwardRef, tw } from "@/utils";
+import { forwardRef, tw } from "~/utils";
 
 const BUTTON_VARIANT = {
   PRIMARY: "primary",

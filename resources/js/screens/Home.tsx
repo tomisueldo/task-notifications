@@ -1,9 +1,4 @@
-import { MODAL_ROUTES } from "@/router";
-import { useNavigateModal } from "@/router/useNavigateModal";
-import { Button } from "@/ui";
-
 export const Home = () => {
-  const navigateModal = useNavigateModal();
   return (
     <div className="prose p-10 text-white lg:prose-xl">
       <h1 className="text-white">HOME Title</h1>
@@ -23,10 +18,6 @@ export const Home = () => {
 
         <li>item</li>
       </ul>
-
-      <Button onClick={() => navigateModal(MODAL_ROUTES.exampleModal)}>
-        I open the example modal
-      </Button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import { tw } from "@/utils";
+import { tw } from "~/utils";
 
 export interface MessageProps extends ComponentPropsWithoutRef<"p"> {
   message?: string;
@@ -16,6 +16,6 @@ export const Message = ({ message, error, className }: MessageProps) => (
       !!error && "text-red-400",
     )}
   >
-    {error === true ? "\u200b" : !error ? message ?? "\u200b" : error}
+    {error === true ? "\u200b" : !error ? (message ?? "\u200b") : error}
   </p>
 );

@@ -3,9 +3,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { createUser } from "@/api";
-import { Button, errorToast, icons, Input, useToastStore } from "@/ui";
-import { handleAxiosFieldErrors } from "@/utils";
+import { createUser, handleAxiosFieldErrors } from "~/api";
+import { Button, errorToast, icons, Input, useToastStore } from "~/ui";
 
 const userSchema = z
   .object({

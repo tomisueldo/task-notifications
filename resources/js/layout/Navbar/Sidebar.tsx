@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 
-import { Logo } from "@/components";
-import { ROUTES } from "@/router";
-import { useUserStore } from "@/stores";
-import { icons } from "@/ui";
-import { tw } from "@/utils";
+import { Logo } from "~/icons";
+import { ROUTES } from "~/router";
+import { useUserStore } from "~/stores";
+import { icons } from "~/ui";
+import { tw } from "~/utils";
 
 const navigation = [
   {

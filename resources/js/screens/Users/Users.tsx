@@ -1,10 +1,8 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { deleteUser, getUsersQuery } from "@/api";
-import { MODAL_ROUTES } from "@/router";
-import { useNavigateModal } from "@/router/useNavigateModal";
-import { Button, errorToast, icons, useToastStore } from "@/ui";
-import { tw } from "@/utils";
+import { deleteUser, getUsersQuery } from "~/api";
+import { Button, errorToast, icons, useToastStore } from "~/ui";
+import { tw } from "~/utils";
 
 const statuses = {
   Completed: "text-green-400 bg-green-400/10",
@@ -153,15 +151,14 @@ export const Users = () => {
     onError: errorToast,
   });
 
-  const navigateModal = useNavigateModal();
-
   return (
     <div className="bg-gray-900">
       <h2 className="flex items-center justify-between px-4 py-9 text-base font-semibold leading-7 text-white sm:px-6 lg:px-8">
         Latest activity
         <Button
           variant="secondary"
-          onClick={() => navigateModal(MODAL_ROUTES.userForm)}
+          // TODO: open modal here insted of previous navigation to modal route
+          // onClick={() => navigateModal(MODAL_ROUTES.userForm)}
         >
           Create user
         </Button>

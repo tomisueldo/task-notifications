@@ -1,7 +1,7 @@
 import * as heroIcons from "@heroicons/react/24/outline";
 
-import type { SVGProps } from "@/shared.types";
-import { tw } from "@/utils";
+import type { SVGProps } from "~/shared.types";
+import { tw } from "~/utils";
 
 export const icons = {
   ...heroIcons,

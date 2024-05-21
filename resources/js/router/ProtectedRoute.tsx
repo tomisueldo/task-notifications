@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
-import { useUserStore } from "@/stores/useUserStore";
+import { useUserStore } from "~/stores/useUserStore";
 import { ROUTES } from "./routes";
 
 type UserState = "loggedOut" | "standard" | "admin";
@@ -20,7 +20,7 @@ export const ProtectedRoute = ({
   expected: UserState | UserState[];
 }) => {
   const userState = useUserStore((state) =>
-    state.token ? state.user?.role ?? "standard" : "loggedOut",
+    state.token ? (state.user?.role ?? "standard") : "loggedOut",
   );
 
   if (!expected.includes(userState)) {

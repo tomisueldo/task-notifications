@@ -14,10 +14,10 @@ We help digital health startups, clinics, and medtech companies ideate, design, 
 
 ## Install
 
-Requirements: Php >= 8.2.0 & Composer
+Requirements: Php >= 8.3.0 & Composer
 
-- `brew install php@8.2 composer` Mac OS X with brew
-- `apt-get install php8.2` Ubuntu with apt-get (use sudo if is necessary)
+- `brew install php@8.3 composer` Mac OS X with brew
+- `apt-get install php8.3` Ubuntu with apt-get (use sudo if is necessary)
 
 This step is not necessary when you use Docker.
 
@@ -25,7 +25,7 @@ This step is not necessary when you use Docker.
 
 - Docker
   - Laravel Sail
-- Laravel 11.X & Php 8.2
+- Laravel 11.X & Php 8.3
   - Tools
     - Clockwork Debug Bar
     - Ide Helper
@@ -61,13 +61,13 @@ This step is not necessary when you use Docker.
 1. Clone GitHub repo for this project locally:
 
    ```bash
-   git clone git@github.com:Light-it-labs/lightranet
+   git clone git@github.com:Light-it-labs/laravel
    ```
 
 2. cd into your project and create a copy of your .env file
 
    ```bash
-   cd lightranet
+   cd laravel
    cp .env.example .env
    ```
 
@@ -80,7 +80,7 @@ This step is not necessary when you use Docker.
      -u "$(id -u):$(id -g)" \
      -v $(pwd):/var/www/html \
      -w /var/www/html \
-     laravelsail/php82-composer:latest \
+     laravelsail/php83-composer:latest \
      composer install --ignore-platform-reqs
    ```
 
@@ -106,21 +106,23 @@ This step is not necessary when you use Docker.
 ### Frontend
 
 You need nvm installed in your machine. <https://github.com/nvm-sh/nvm#install--update-script>
+You need pnpm installed in your machine <https://pnpm.io/es/installation>
 
-For frontend environment you need install npm dependencies with `npm install` and after that to compile assets for Frontend SPA in local you can run: `npm run dev` or `npm run watch`
-In production environment is necessary run `npm run production`
+
+For frontend environment you need install npm dependencies with `pnpm install` and after that to compile assets for Frontend SPA in local you can run: `npm run dev` or `npm run watch`
+In production environment is necessary run `pnpm run production`
 
 1. Install npm dependencies:
 
    ```bash
    nvm use
-   npm install
+   pnpm install
    ```
 
 2. Run the app:
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 ### Hooks
@@ -295,7 +297,7 @@ To access services in local environment with host aliases, add the following ali
 2. Paste the following hosts aliases:
 
    ```bash
-   127.0.0.1       lightranet.test
+   127.0.0.1       laravel.test
    127.0.0.1       db
    127.0.0.1       s3
    127.0.0.1       redis
@@ -304,7 +306,7 @@ To access services in local environment with host aliases, add the following ali
 
 ## System Requirements
 
-- php: 8.2.x
+- php: 8.3.x
 - php ini configurations:
   - `upload_max_filesize = 100M`
   - `post_max_size = 100M`

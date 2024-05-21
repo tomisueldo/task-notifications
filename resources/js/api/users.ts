@@ -1,7 +1,7 @@
 import type { QueryClient } from "@tanstack/react-query";
 
 import type { ServiceResponse } from "./api.types";
-import { privateAPI } from "./axios";
+import { api } from "./axios";
 
 const DOMAIN = "user";
 const ALL = "all";
@@ -15,7 +15,7 @@ export interface User {
 export const getUsersQuery = () => ({
   queryKey: [DOMAIN, ALL, "getUsersQuery"],
   queryFn: async () => {
-    const response = await privateAPI.get<ServiceResponse<User[]>>("/users");
+    const response = await api.get<ServiceResponse<User[]>>("/users");
 
     return response.data.data;
   },
@@ -24,9 +24,7 @@ export const getUsersQuery = () => ({
 export const getUserQuery = (userId: User["id"]) => ({
   queryKey: [DOMAIN, userId, "getUserQuery"],
   queryFn: async () => {
-    const response = await privateAPI.get<ServiceResponse<User>>(
-      `/users/${userId}`,
-    );
+    const response = await api.get<ServiceResponse<User>>(`/users/${userId}`);
 
     return response.data.data;
   },
@@ -42,7 +40,7 @@ interface CreateUserParams {
 export const createUser = {
   mutation: async (params: CreateUserParams) => {
     const { passwordConfirmation, ...rest } = params;
-    const response = await privateAPI.post<ServiceResponse<User>>("/users", {
+    const response = await api.post<ServiceResponse<User>>("/users", {
       ...rest,
       password_confirmation: passwordConfirmation,
     });
@@ -56,7 +54,7 @@ export const createUser = {
 
 export const deleteUser = {
   mutation: async (userId: User["id"]) => {
-    await privateAPI.delete(`/users/${userId}`);
+    await api.delete(`/users/${userId}`);
   },
   invalidates: (
     queryClient: QueryClient,
