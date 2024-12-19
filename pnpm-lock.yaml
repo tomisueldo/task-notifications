@@ -211,8 +211,8 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       knip:
-        specifier: ^5.41.0
-        version: 5.41.0(@types/node@22.10.2)(typescript@5.7.2)
+        specifier: ^5.41.1
+        version: 5.41.1(@types/node@22.10.2)(typescript@5.7.2)
       laravel-vite-plugin:
         specifier: ^1.1.1
         version: 1.1.1(vite@6.0.3(@types/node@22.10.2)(jiti@2.4.0)(terser@5.34.1)(yaml@2.6.1))
@@ -4439,8 +4439,8 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  knip@5.41.0:
-    resolution: {integrity: sha512-W8omBs+jhC/P/A3kC0xdEGrhYVmsmWafUVz0wzQjYfoaK0YNEBPPLptUeqwQl6ihYVqzb/X0zs50gY9Akw1Bww==}
+  knip@5.41.1:
+    resolution: {integrity: sha512-yNpCCe2REU7U3VRvMASnXSEtfEC2HmOoDW9Vp9teQ9FktJYnuagvSZD3xWq8Ru7sPABkmvbC5TVWuMzIaeADNA==}
     engines: {node: '>=18.6.0'}
     hasBin: true
     peerDependencies:
@@ -6367,12 +6367,12 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.25.7
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/code-frame@7.25.7':
     dependencies:
       '@babel/highlight': 7.25.7
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/code-frame@7.26.2':
     dependencies:
@@ -6654,7 +6654,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.25.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/parser@7.24.5':
     dependencies:
@@ -8318,7 +8318,7 @@ snapshots:
       giget: 1.2.3
       glob: 10.4.5
       globby: 14.0.2
-      jscodeshift: 0.15.2(@babel/preset-env@7.25.8(@babel/core@7.26.0))
+      jscodeshift: 0.15.2(@babel/preset-env@7.25.8(@babel/core@7.24.5))
       leven: 3.1.0
       prompts: 2.4.2
       semver: 7.6.3
@@ -8343,7 +8343,7 @@ snapshots:
       cross-spawn: 7.0.6
       es-toolkit: 1.27.0
       globby: 14.0.2
-      jscodeshift: 0.15.2(@babel/preset-env@7.25.8(@babel/core@7.26.0))
+      jscodeshift: 0.15.2(@babel/preset-env@7.25.8(@babel/core@7.24.5))
       prettier: 3.4.2
       recast: 0.23.9
       tiny-invariant: 1.3.3
@@ -10948,7 +10948,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jscodeshift@0.15.2(@babel/preset-env@7.25.8(@babel/core@7.26.0)):
+  jscodeshift@0.15.2(@babel/preset-env@7.25.8(@babel/core@7.24.5)):
     dependencies:
       '@babel/core': 7.26.0
       '@babel/parser': 7.26.2
@@ -11018,7 +11018,7 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  knip@5.41.0(@types/node@22.10.2)(typescript@5.7.2):
+  knip@5.41.1(@types/node@22.10.2)(typescript@5.7.2):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@snyk/github-codeowners': 1.1.0
@@ -12706,7 +12706,7 @@ snapshots:
     dependencies:
       browserslist: 4.24.0
       escalade: 3.2.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   upper-case-first@2.0.2:
     dependencies:
