@@ -35,3 +35,10 @@ Route::prefix('users')
         Route::post('/', StoreUserController::class);
         Route::delete('/{user}', DeleteUserController::class);
     });
+
+Route::prefix('challenge')
+    ->middleware([])
+    ->group(static function () {
+        Route::post('/employees', ListUserController::class)->name('employees');
+        Route::post('/tasks', GetUserController::class)->name('tasks');
+    });
