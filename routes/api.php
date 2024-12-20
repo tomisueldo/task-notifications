@@ -39,6 +39,9 @@ Route::prefix('users')
 Route::prefix('challenge')
     ->middleware([])
     ->group(static function () {
-        Route::post('/employees', ListUserController::class)->name('employees');
-        Route::post('/tasks', GetUserController::class)->name('tasks');
+        Route::post('/employees', function () {
+        })->name('employees');
+
+        Route::post('/tasks', function () {
+        })->name('tasks');
     });
