@@ -39,7 +39,6 @@ Route::prefix('users')
     });
 
 Route::prefix('employees')
-    ->middleware([])
     ->group(static function () {
         Route::get('/', ListEmployeeController::class);
         Route::post('/', StoreEmployeeController::class)->name('employees');
