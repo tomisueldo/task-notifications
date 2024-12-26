@@ -14,10 +14,10 @@ class UpdateTaskController
 {
     public function __invoke(Task $task, UpdateTaskRequest $request, UpdateTaskAction $storeTaskAction): JsonResponse
     {
-        $employee = $storeTaskAction->execute($task, $request->toDto());
+        $task = $storeTaskAction->execute($task, $request->toDto());
 
         return responder()
-            ->success($employee, TaskTransformer::class)
+            ->success($task, TaskTransformer::class)
             ->respond(JsonResponse::HTTP_OK);
     }
 }

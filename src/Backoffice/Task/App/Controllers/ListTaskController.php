@@ -12,10 +12,10 @@ class ListTaskController
 {
     public function __invoke(ListTaskAction $listTaskAction): JsonResponse
     {
-        $employees = $listTaskAction->execute();
+        $tasks = $listTaskAction->execute();
 
         return responder()
-            ->success($employees, TaskTransformer::class)
+            ->success($tasks, TaskTransformer::class)
             ->respond(JsonResponse::HTTP_OK);
     }
 }

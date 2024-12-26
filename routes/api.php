@@ -49,10 +49,9 @@ Route::prefix('employees')
     });
 
 Route::prefix('tasks')
-    ->middleware([])
     ->group(static function () {
         Route::get('/', ListTaskController::class);
-        Route::get('/{task}', GetTaskController::class);
+        Route::get('/{taskId}', GetTaskController::class)->whereNumber('task');
         Route::post('/', StoreTaskController::class)->name('tasks');
         Route::put('/{task}', UpdateTaskController::class);
     });

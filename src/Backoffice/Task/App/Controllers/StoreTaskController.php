@@ -13,10 +13,10 @@ class StoreTaskController
 {
     public function __invoke(StoreTaskRequest $request, StoreTaskAction $storeTaskAction): JsonResponse
     {
-        $employee = $storeTaskAction->execute($request->toDto());
+        $task = $storeTaskAction->execute($request->toDto());
 
         return responder()
-            ->success($employee, TaskTransformer::class)
+            ->success($task, TaskTransformer::class)
             ->respond(JsonResponse::HTTP_CREATED);
     }
 }
