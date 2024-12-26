@@ -12,12 +12,12 @@ use Lightit\Backoffice\Task\Domain\Models\Task;
 
 class UpdateTaskController
 {
-    public function __invoke(Task $task, UpdateTaskRequest $request, UpdateTaskAction $storeTaskAction): JsonResponse
+    public function __invoke(Task $task, UpdateTaskRequest $request, UpdateTaskAction $updateTaskAction): JsonResponse
     {
-        $task = $storeTaskAction->execute($task, $request->toDto());
+        $updatedTask = $updateTaskAction->execute($task, $request->toDto());
 
         return responder()
-            ->success($task, TaskTransformer::class)
+            ->success($updatedTask, TaskTransformer::class)
             ->respond(JsonResponse::HTTP_OK);
     }
 }
