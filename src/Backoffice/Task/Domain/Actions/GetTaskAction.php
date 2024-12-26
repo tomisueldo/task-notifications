@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Task\Domain\Actions;
 
-use Illuminate\Database\Eloquent\Model;
 use Lightit\Backoffice\Task\Domain\Models\Task;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class GetTaskAction
 {
-    public function execute(): Model|null
+    public function execute(int $taskId): Task
     {
-        return QueryBuilder::for(Task::class)
-            ->first();
+        return Task::query()->findOrFail($taskId);
     }
 }

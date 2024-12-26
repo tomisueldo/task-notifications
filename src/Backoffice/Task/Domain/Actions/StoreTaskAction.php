@@ -11,7 +11,7 @@ class StoreTaskAction
 {
     public function execute(TaskDto $taskDto): Task
     {
-        return Task::create([
+        return Task::query()->create([
             'title' => $taskDto->title,
             'description' => $taskDto->description,
             'status' => $taskDto->status,

@@ -10,7 +10,7 @@ use Lightit\Backoffice\Task\Domain\Models\Task;
 class TaskTransformer extends Transformer
 {
     /**
-     * @return array{id: int, title: string, description: string, status: string, employee_id: int}
+     * @return array{id: int, title: string, description: string, status: string, employeeId: int}
      */
     public function transform(Task $task): array
     {
@@ -19,7 +19,7 @@ class TaskTransformer extends Transformer
             'title' => $task->title,
             'description' => $task->description,
             'status' => $task->status,
-            'employee_id' => $task->employee_id,
+            'employeeId' => $task->employee_id,
         ];
     }
 }
