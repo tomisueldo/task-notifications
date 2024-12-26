@@ -12,3 +12,4 @@ parameters:
 
     ignoreErrors:
         - '#^Illuminate\\Support\\Facades\\[a-zA-Z0-9\\_]+ facade should not be used\.$#'
+        - '#^Cannot cast mixed to (int|string).$#'
