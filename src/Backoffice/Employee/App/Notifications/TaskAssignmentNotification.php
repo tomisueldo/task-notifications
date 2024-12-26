@@ -29,7 +29,7 @@ class TaskAssignmentNotification extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage())
-            ->from((string) config('mail.from_email_lightit'), (string) config('mail.from_name_lightit'))
+            ->from((string) config('mail.from.from_email_lightit'), (string) config('mail.from.from_name_lightit'))
             ->subject('Task has been assigned to you')
             ->markdown('mail.assigned-task', [
                 'title' => $this->task->title,

@@ -112,7 +112,7 @@ return [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
         'from_email_lightit' => env('LIGHTIT_FROM_EMAIL', 'DoNotReply@lightit.io'),
-        'from_name_lightit' => env('LIGHTIT_FROM_NAME', 'Light It'),
+        'from_name_lightit' => env('LIGHTIT_FROM_NAME', 'Light-It'),
     ],
 
 ];
