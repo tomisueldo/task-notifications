@@ -37,14 +37,4 @@ class TaskAssignmentNotification extends Notification implements ShouldQueue
                 'description' => $this->task->description,
             ]);
     }
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function toArray(object $notifiable): array
-    {
-        return [
-
-        ];
-    }
 }

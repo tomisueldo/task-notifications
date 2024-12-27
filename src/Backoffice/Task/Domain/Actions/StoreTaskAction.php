@@ -19,12 +19,12 @@ class StoreTaskAction
             'employee_id' => $taskDto->employee->id,
         ]);
 
-        $this->getNotify($task);
+        $this->notifyAssignedEmployee($task);
 
         return $task;
     }
 
-    public function getNotify(Task $task): void
+    public function notifyAssignedEmployee(Task $task): void
     {
         $task->employee->notify(new TaskAssignmentNotification($task));
     }
