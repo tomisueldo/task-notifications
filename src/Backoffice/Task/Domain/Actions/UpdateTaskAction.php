@@ -28,7 +28,7 @@ class UpdateTaskAction
         return $task;
     }
 
-    public function notifyNewEmployee(Task $updatedTask, int $previousEmployeeId): void
+    private function notifyNewEmployee(Task $updatedTask, int $previousEmployeeId): void
     {
         if ($previousEmployeeId !== $updatedTask->employee_id) {
             $updatedTask->employee->notify(new TaskAssignmentNotification($updatedTask));

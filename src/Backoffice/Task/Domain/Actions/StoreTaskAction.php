@@ -24,7 +24,7 @@ class StoreTaskAction
         return $task;
     }
 
-    public function notifyAssignedEmployee(Task $task): void
+    private function notifyAssignedEmployee(Task $task): void
     {
         $task->employee->notify(new TaskAssignmentNotification($task));
     }
