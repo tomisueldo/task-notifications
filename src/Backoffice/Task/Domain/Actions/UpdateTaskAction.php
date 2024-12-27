@@ -14,14 +14,12 @@ class UpdateTaskAction
     {
         $previousEmployeeId = $task->employee_id;
 
-        $task->fill([
+        $task->updateOrFail([
             'title' => $taskDto->title,
             'description' => $taskDto->description,
             'status' => $taskDto->status,
             'employee_id' => $taskDto->employee->id,
         ]);
-
-        $task->save();
 
         $this->notifyNewEmployee($task, $previousEmployeeId);
 
